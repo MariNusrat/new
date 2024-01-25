@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #ac6b6b; /* Lighter background for a fresher look */
+    color: #333; /* Darker text for better readability */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+}
+
+.container {
+    min-height: calc(100vh - 108px);
+    width: 100%;
+    padding: 40px; /* Added padding for better spacing */
+}
+
+.warning {
+    margin-top: 3em;
+    color: #0056b3; /* Accent color for important text */
+    text-align: center;
+    font-size: 5em;
+}
+
+.main {
+    /*margin-top: 3em;*/
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px; /* Rounded corners for a softer look */
+    padding: 50px;
+    background-color: #353333; /* Contrasting background for the main area */
+    /*box-shadow: 0 2px 4px rgba(141, 129, 129, 0.1); /* Subtle shadow for depth */
+}
+
+.high {
+    text-decoration: underline;
+    font-size: larger;
+    font-weight: bold;
+    color: #f57c00; /* Warm accent color for highlighting */
+}
+
+/* Adding a hover effect for links */
+a:hover {
+    color: #f57c00;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main, .container {
+        padding: 10px;
+    }
+    .warning {
+        font-size: 3em;
+    }
+}
+.custom-login-form{
+    color:white;
+
+}
+.input{
+    width: 400px;
+}
+.form-title{
+    color: white;
+}
+.heading{
+    color:#f57c00;
+}

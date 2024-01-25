@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% if role == 'admin' %}
+{% include "includes/admin_nav.html" %}
+{% else %}
+{% include "includes/user_nav.html" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="heading">Welcome <span class="high">{{ role|title }}</span> To Your <span class="high">Account</span>:</h1>
+<br>
+
+<!-- Picture Upload and Interaction Section -->
+<label for="imageUpload" class="form-label">Upload Picture:</label>
+<input type="file" class="form-control" id="imageUpload" accept="image/*">
+<div id="imagePreviewContainer" style="display: flex; align-items: center; gap: 10px;">
+    <!-- Image preview will be dynamically inserted here -->
+</div>
+<br><br>
+
+<!-- Social Activity Input Section -->
+<div id="activityInputSection">
+    <select class="form-control" id="activityType">
+        <option value="twitter">Twitter</option>
+        <option value="youtube">YouTube</option>
+        <option value="facebook">Facebook</option>
+    </select>
+    <input type="number" id="likesInput" class="form-control mt-2" placeholder="Enter number of Likes">
+    <input type="number" id="retweetsInput" class="form-control mt-2" placeholder="Enter number of Retweets">
+    <input type="text" id="postInput" class="form-control mt-2" placeholder="Enter Post URL">
+    <input type="date" id="dateInput" class="form-control mt-2">
+    <button id="addActivityButton" class="btn btn-info mt-2">Add Activity</button>
+</div>
+<div id="activityContainer">
+    <!-- Activities will be displayed here -->
+</div>
+<br>
+
+<!-- Graph Section -->
+<button id="makeGraphButton" class="btn btn-success">Make Graph</button>
+<div id="activityGraph" style="width: 100%; height: 300px; display: none;"></div>
+
+<script>
+    // Image upload script
+    document.getElementById('imageUpload').addEventListener('change', function (event) {
+        // ... unchanged code for file upload ...
+
+        // Add image preview functionality
+        var imagePreviewContainer = document.getElementById('imagePreviewContainer');
+        imagePreviewContainer.innerHTML = ''; // Clear previous content
+
+        var img = document.createElement('img');
+        img.src = src;
+        img.style.maxWidth = '200px';
+        img.style.maxHeight = '200px';
+
+        imagePreviewContainer.appendChild(img);
+        imagePreviewContainer.appendChild(zoomInButton);
+        imagePreviewContainer.appendChild(zoomOutButton);
+        imagePreviewContainer.appendChild(downloadLink);
+    });
+
+    // Zoom in and zoom out functionality
+    // ... unchanged code ...
+
+    // Activity addition script
+    document.getElementById('addActivityButton').addEventListener('click', function () {
+        // ... unchanged code for adding activity ...
+
+        // Code to display activity details
+        // ... unchanged code ...
+    });
+
+    // Graph creation script
+    document.getElementById('makeGraphButton').addEventListener('click', function () {
+        // ... unchanged code for graph creation ...
+    });
+</script>
+
+{% endblock %}
